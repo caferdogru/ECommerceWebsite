@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{C93DBB10-5AEE-4A82-9B7A-1E3197C35E03}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "Conts\Controller.csproj", "{84F1506C-04E2-46B6-B2D4-A539400FE099}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "Controllers\Controller.csproj", "{84F1506C-04E2-46B6-B2D4-A539400FE099}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
