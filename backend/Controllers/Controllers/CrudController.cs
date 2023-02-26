@@ -27,30 +27,30 @@ namespace Controller.Controllers
         [HttpGet]
         [Route("GetAll")]
 
-        public IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            return _repository.GetAll();
+            return await _repository.GetAll();
         }
 
 
         [HttpGet]
         [Route("Get")]
 
-        public T Get([FromQuery] int id)
+        public Task<T> Get([FromQuery] int id)
         {
             return _repository.Get(id);
         }
 
         [HttpPost]
         [Route("Create")]
-        public T Create([FromBody] T model)
+        public Task<T> Create([FromBody] T model)
         {
             return _repository.Create(model);
         }
 
         [HttpPost]
         [Route("Update")]
-        public T Update([FromBody] T model)
+        public Task<T> Update([FromBody] T model)
         {
             return _repository.Update(model);
         }

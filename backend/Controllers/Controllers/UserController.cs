@@ -8,6 +8,7 @@ namespace Conts.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+
     public class UserController : CrudController<User, IUserRepository>
     {
 
@@ -24,6 +25,15 @@ namespace Conts.Controllers
         {
             _logger = logger;
             _userRepository = userRepository;
+        }
+
+        [HttpGet]
+        [Route("Login")]
+
+        public bool login(string email, string password)
+        {
+            bool isTrue = _userRepository.login(email, password);
+            return isTrue;
         }
 
 

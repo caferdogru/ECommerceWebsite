@@ -9,13 +9,13 @@ namespace DataAccess.Abstract
 {
     public interface ICrudRepository<T> where T: class
     {
-        IEnumerable<T> GetAll();
+        Task<IEnumerable<T>> GetAll();
 
-        T Get(int id);
+        Task<T> Get(int id);
 
-        T Create(T product);
+        Task<T> Create(T product);
 
-        T Update(T product);
+        Task<T> Update(T product);
 
         void Delete(int id);
 

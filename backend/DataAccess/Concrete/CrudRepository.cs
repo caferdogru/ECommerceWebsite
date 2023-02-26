@@ -14,45 +14,44 @@ namespace DataAccess.Concrete
 
         private ECommerceDbContext _context;
 
-        public CrudRepository(ECommerceDbContext dbContext)
+        public CrudRepository(ECommerceDbContext dbContext) 
         {
             _context = dbContext;
         }
-        public T Create(T model)
-        {
- 
-              _context.Set<T>().Add(model);
-              _context.SaveChanges();
-              return model;
+        public virtual async Task<T> Create(T model)
+        {   
+               
+             _context.Set<T>().Add(model);
+             await  _context.SaveChangesAsync();
+             return model;
             
         }
 
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
-            T model = Get(id);
+            T model = Get(id).Result;
             _context.Set<T>().Remove(model);
             _context.SaveChanges();
 
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual async Task<IEnumerable<T>> GetAll()
         {
 
-
-            return _context.Set<T>().AsNoTracking().ToList();
+            return await _context.Set<T>().AsNoTracking().ToListAsync();
         }
 
-        public T Get(int id)
+        public virtual async Task<T> Get(int id)
         {
 
-            return  _context.Set<T>().Find(id);
+            return await _context.Set<T>().FindAsync(id);
         }
 
-        public T Update(T model)
+        public virtual async Task<T> Update(T model)
         {
 
             _context.Set<T>().Update(model);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return model;
 
 

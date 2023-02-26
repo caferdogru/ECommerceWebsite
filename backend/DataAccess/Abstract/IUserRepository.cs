@@ -9,6 +9,6 @@ namespace DataAccess.Abstract
 {
     public interface IUserRepository:ICrudRepository<User>
     {
-
+        bool login(string email, string password);
     }
 }

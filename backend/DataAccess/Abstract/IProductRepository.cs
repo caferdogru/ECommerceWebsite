@@ -9,6 +9,6 @@ namespace DataAccess.Abstract
 {
     public interface IProductRepository:ICrudRepository<Product>
     {
-
+        IEnumerable<Product> GetProductByCategory(int categoryId);
     }
 }

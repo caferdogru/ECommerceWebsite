@@ -26,5 +26,14 @@ namespace Conts.Controllers
             _productRepository = productRepository;
         }
 
+
+        [HttpGet]
+        [Route("GetProductByCategory")]
+
+        public IEnumerable<Product> GetByCategoryId(int categoryId)
+        {
+            return _productRepository.GetProductByCategory(categoryId);
+        }
+
     }
 }

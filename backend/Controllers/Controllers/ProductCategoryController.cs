@@ -15,7 +15,7 @@ namespace Conts.Controllers
 
         private readonly IProductCategoryRepository _productCategoryRepository;
 
-
+      
 
         public ProductCategoryController(
             ILogger<CrudController<ProductCategory, IProductCategoryRepository>> logger,

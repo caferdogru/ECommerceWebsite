@@ -4,6 +4,7 @@ using DataAccess.Concrete;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+string connString = builder.Configuration.GetConnectionString("ECommerceDBConnection");
 
 // Add services to the container.
 
@@ -22,10 +23,22 @@ builder.Services.AddCors(options =>
                       });
 });
 
+builder.Services.AddDbContext<ECommerceDbContext>(options =>
+{
+    options.UseSqlServer(connString);
+
+});
+
 builder.Services.AddDbContext<ECommerceDbContext>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
+builder.Services.AddScoped<IUserBasketRepository, UserBasketRepository>();
+builder.Services.AddScoped<IBasketContentRepository, BasketContentRepository>();
+
+
+
+
 
 
 
