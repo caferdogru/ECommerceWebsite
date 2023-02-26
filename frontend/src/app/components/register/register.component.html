@@ -1,0 +1,28 @@
+<div class="container">
+
+    <form class="register-form" [formGroup]="userForm" (ngSubmit)="createUser()">
+        <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input type="text" formControlName="firstName" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input formControlName="lastName" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" formControlName="email" matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Birthday</mat-label>
+            <input formControlName="birthday" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" formControlName="password" password matInput>
+        </mat-form-field>
+        <button class="btn btn-primary submit-btn" type="submit">Register</button>
+    </form>
+</div>

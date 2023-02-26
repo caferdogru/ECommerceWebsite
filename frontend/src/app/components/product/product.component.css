@@ -1,0 +1,17 @@
+
+
+
+.product-img {
+    /* height: 250px;
+    width: 100%; */
+    width: 30rem;
+    height: 100%;
+    object-fit: contain;
+}
+
+.category:hover {
+    cursor: pointer;
+    background-color: rgb(196, 196, 216);
+    transition: 0.5s;
+    color:white;
+}

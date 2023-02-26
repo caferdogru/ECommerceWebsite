@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <ul class="list-group">
+        <li class="list-group-item category" *ngFor="let category of productCategoryService.productCategories">
+          <a [routerLink]="['/Category', category.categoryId]">{{category.categoryName}}</a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!products">
+      <h1> There is no product in this category</h1>
+    </div>
+    <div class="col-9 products">
+      <div class="row">
+        <div class="card" style="width: 18rem;" *ngFor="let product of products" [routerLink]="['/Product', product.id]">
+          <img [src]="product.imageUrl" class="card-img-top product-img" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">{{product.name}}</h2>
+            <p class="card-text">{{product.price}}</p>
+            <button type="button" class="btn btn-primary btn-sm">Add To Cart</button>
+            <button type="button" class="btn btn-primary btn-sm">Add To Favorites</button>
+            <button type="button" class="btn btn-primary btn-sm" (click)="deleteProduct(product)">Delete</button>
+
+          </div>
+  
+          <!-- <button type="button" class="btn btn-primary btn-sm">Add To Cart</button>
+            <button type="button" class="btn btn-primary btn-sm">Add To Favorites</button> -->
+  
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>

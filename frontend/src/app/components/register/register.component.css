@@ -1,0 +1,31 @@
+
+.container {
+
+    width: auto;
+    height: auto;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.register-form > mat-form-field {
+    width: 25rem;
+
+}
+
+.submit-btn {
+    width: 10rem;
+    background-color: black;
+    border: none;
+    border-radius: 25px;
+}
+
+.submit-btn:hover {
+    opacity: 0.5;
+    transition: 0.4s;
+}
